@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+</head>
+<style>
+    *{
+    margin: 0;padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.user-info{
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+    justify-content: center;
+    align-items: center;
+}
+.user-info input{
+    padding: 10px;
+    width: 100%;
+}
+ .terms,.login-link{
+    margin: 15px 0;
+    font-size: 1.2rem;
+    text-align: center;
+ }
+ .button{
+    text-align: center;
+    margin: 15px 0;
+ }
+ .button button{
+    padding: 10px 25px;
+    color: #fff;
+    background-color: crimson;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+ }
+ .heading{
+    margin: 30px 0;
+ }
+</style>
+
+<body>
+    <div class="container">
+        <a href="index.html" style="font-size: 30px; margin: 20px;">Home</a>
+        <div class="heading">
+    <h1>Registration Page</h1>
+        </div>
+        <form action="login.html" class="form">
+            <div class="user-info">
+                <input type="text" placeholder="Enter Your Name">
+                <input type="email" placeholder="Enter Your Email">
+                <input type="text" placeholder="Enter Your Country">
+                <input type="number" placeholder="Enter Your Phone">
+                <input type="password" placeholder="Enter Your Password">
+            </div>
+            <div class="terms">
+                <label for="check"><input type="checkbox" id="check" required> Agree to terms and condition</label>
+            </div>
+            <div class="button">
+                <button>Create Account</button>
+            </div>
+            <div class="login-link">
+                <span>Already have an account? <a href="login.html">Sign in</a></span>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

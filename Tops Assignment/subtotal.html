@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subtotal</title>
+</head>
+<style>
+    .name{
+        font-size: 1.1rem;
+        font-weight: bolder
+    }
+    #img,#img2 {
+        width: 200px;
+        margin: 20px 0;
+    }
+    .heading{
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+        padding: 15px 0 0 0;
+    }
+
+    .quantity-value {
+        margin: 30px 0;
+    }
+    
+    .item-price,.item-price2 {
+        padding: 30px 0;
+        font-size: 20px;
+    }
+
+    .subtotal-price {
+        padding: 30px 0;
+        font-size: 20px;
+    }
+    .btn button{
+        padding: 10px 20px;
+        color: #fff;
+        font-size: 18px;
+        border: none;
+        background-color: blueviolet;
+        border-radius: 5px;
+    }
+    #value,#value2{
+        padding: 10PX 20px;
+        font-size: 20px;
+    }
+    .welcome-heading{
+        text-align: center;
+        text-decoration: underline;
+    }
+</style>
+
+<body>
+    <a href="index.html" style="font-size: 30px; margin: 20px;">Home</a>
+    <h1 class="welcome-heading">Welcome to Cart </h1>
+    <div class="container">
+        <div class="product-info">
+            <div class="heading">
+                <span>Product Info</span>
+            </div>
+            <div class="product-image">
+                <img src="shoes.jpg" alt="shoes photo" id="img">
+            </div>
+            <div class="name">
+                <span>Shoes</span>
+            </div>
+        </div>
+        <div class="quantity">
+            <div class="heading">
+                <span>Quantity</span>
+            </div>
+            <div class="quantity-value">
+                <input type="number" value="1" min="1" max="10" id="value" onchange="add()" autocomplete="off">
+            </div>
+        </div>
+
+        <div class="product-price">
+            <div class="heading">
+                <span>Price Per Unit</span>
+            </div>
+            <div class="item-price">
+                <span class="price"></span>
+            </div>
+        </div>
+        <div class="price-subtotal">
+            <div class="heading">
+                <span>Price (subtotal)</span>
+            </div>
+            <div class="subtotal-price">
+                <span class="final-price"></span>
+            </div>
+        </div>
+    </div> 
+    <hr>
+    <div class="container">
+        <div class="product-info">
+            <div class="heading">
+                <span>Product Info</span>
+            </div>
+            <div class="product-image">
+                <img src="shocks.jpg" alt="shoes photo" id="img2" >
+            </div>
+            <div class="name">
+                <span>Shocks</span>
+            </div>
+        </div>
+        <div class="quantity">
+            <div class="heading">
+                <span>Quantity</span>
+            </div>
+            <div class="quantity-value">
+                <input type="number" value="1" min="1" max="10" id="value2" onchange="add2()">
+            </div>
+        </div>
+
+        <div class="product-price">
+            <div class="heading">
+                <span>Price Per Unit</span>
+            </div>
+            <div class="item-price">
+                <span class="price2"></span>
+            </div>
+        </div>
+        <div class="price-subtotal">
+            <div class="heading">
+                <span>Price (subtotal)</span>
+            </div>
+            <div class="subtotal-price">
+                <span class="final-price2"></span>
+            </div>  
+        </div>
+    </div>
+
+    <script>
+        let item_price = document.querySelector('.price');
+        let quantity = document.querySelector('#value');
+        let final_price = document.querySelector('.final-price');
+        let item_price2 = document.querySelector('.price2');
+        let quantity2 = document.querySelector('#value2');
+        let final_price2 = document.querySelector('.final-price2');
+        final_price.innerHTML = 200;
+        final_price2.innerHTML = 50;
+        item_price2.innerHTML = 50;
+        item_price.innerHTML = 200;
+
+        function add(){
+            a =200;
+            b =quantity.value;
+            final_price.innerHTML = a*b;
+        }
+        function add2(){
+            a = 50;
+            b =quantity2.value;
+            final_price2.innerHTML = a*b;
+        }
+    </script>
+
+
+
+</body>
+
+
+</html>
