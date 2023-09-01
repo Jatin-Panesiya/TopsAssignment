@@ -6,6 +6,7 @@ const UpdateState = () => {
 
   return (
     <div> 
+        <h1>Update State</h1>
         <button onClick={()=>setNum(num +1)}>Increase</button>
         <h1>{num}</h1>
         <button onClick={()=>setNum(num -1)}>Decrease</button>
