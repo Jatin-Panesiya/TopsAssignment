@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questions</title>
+    <style>
+        .question {
+            width: 75%;
+            padding: 10px 30px;
+            font-size: 1.5rem;
+            word-spacing: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="heading">
+    <a href="index.html" style="font-size: 30px; margin: 20px;">Home</a>
+    <h1>Question 1</h1>
+        </div>
+        <div class="question">
+            <span><b> Q :- 1 ] What is JavaScript Output method? </b></span> <br> <br>
+            <span>Answer :- </span> <br> <br>
+            <span>JavaScript provides several methods for outputting data to various destinations, such as the browser's
+                console, HTML document, or alert dialogs. <br> <br><b>Here are some commonly used JavaScript output
+                    methods:</b>
+                <br><br>
+                <b>console.log():</b> <br><br>
+
+                <b> document.write():</b> <br><br>
+
+                <b>innerHTML:</b> <br><br>
+
+                <b>alert():</b> <br><br>
+
+                <b> prompt():</b> <br><br>
+
+                <b>confirm():</b> <br><br>
+
+                <b>These are some of the commonly used JavaScript output methods. The choice of method depends on the
+                    specific requirements and the target destination for the output.</b>
+
+
+            </span>
+            <hr><br><br>
+            <span><b> Q :- 2 ] How to use JavaScript Output method? </b></span> <br> <br>
+            <span>Answer :- </span> <br> <br>
+            <span>JavaScript provides several methods for outputting data to various destinations, such as the browser's
+                console, HTML document, or alert dialogs. <br> <br><b>Here are some commonly used JavaScript output
+                    methods:</b>
+                <br><br>
+                <b>console.log():</b> This method is used to output messages to the browser's console, which is a
+                debugging
+                tool. It is commonly used for testing and debugging purposes. For Example:- <br><br>
+                >> console.log("Hello, world!"); <br><br>
+
+                <b> document.write():</b> This method is used to write content directly into the HTML document. It is
+                simple to
+                use but has limited use cases, as it overwrites the entire document when used after the page has
+                finished loading. For example:- <br><br>
+
+                >> document.write("Hello, world!"); <br><br>
+
+                <b>innerHTML:</b> This property is used to set the HTML content of an element. It allows you to
+                dynamically update the content of an HTML element. For example:- <br><br>
+                >> document.getElementById("myElement").innerHTML = "Hello, world!"; <br><br>
+
+                <b>alert():</b> This method displays a dialog box with a message and an OK button. It is often used to
+                provide simple notifications or display messages to the user. For example: <br><br>
+                >> alert("Hello, world!"); <br><br>
+
+                <b> prompt():</b> This method displays a dialog box that prompts the user for input. It is commonly used
+                to get user input or retrieve values from the user. For example: <br><br>
+                >> var name = prompt("Please enter your name:"); <br><br>
+
+                <b>confirm():</b> This method displays a dialog box with a message and OK and Cancel buttons. It is used
+                to get user confirmation or make simple yes/no decisions. For example: <br><br>
+                >> var result = confirm("Are you sure you want to delete this item?"); <br><br>
+
+                <span><b> Q :- 3 ] How to used JavaScript Events to do all examples? </b></span> <br> <br>
+                <span>Answer :- </span> <br> <br>
+                <span>
+                    To use JavaScript events in the examples mentioned earlier, you can trigger the output methods in
+                    response to specific events. Here's how you can modify each example to use events:</span> <br><br>
+
+                <b>Using the console.log() method with an event:</b> <br>
+                <span> >> document.addEventListener("DOMContentLoaded", function() {
+                    console.log("Hello, world!");
+                    });
+                </span> <br><br>
+
+                <b>Using the alert() method with an event:</b> <br>
+                <span> >> document.addEventListener("DOMContentLoaded", function() {
+                    alert("Hello, world!");
+                    });
+
+                </span> <br><br>
+
+                <b>Using the innerHTML property with an event:</b> <br>
+                <span> >> <button id="outputBtn">Click me</button>
+                    <p id="output"></p> <br><br>
+                    <span>
+                        document.addEventListener("DOMContentLoaded", function () { <br>
+                            var outputElement = document.getElementById("output"); <br>
+                            var outputBtn = document.getElementById("outputBtn"); <br>
+
+                            outputBtn.addEventListener("click", function () { <br>
+                                outputElement.innerHTML = "Hello, world!";
+                            }); <br>
+                        });
+                    </span>
+
+                    <script>
+                        document.addEventListener("DOMContentLoaded", function () {
+                            var outputElement = document.getElementById("output");
+                            var outputBtn = document.getElementById("outputBtn");
+
+                            outputBtn.addEventListener("click", function () {
+                                outputElement.innerHTML = "Hello, world!";
+                            });
+                        });
+                    </script>
+                </span> <br><br>
+
+                <b>Using the document.write() method with an event:</b> <br>
+                <span> >> <button id="dc">Click me</button> <br> <br>
+                    <span>
+                        document.addEventListener("DOMContentLoaded", function () { <br>
+                            var dc = document.getElementById("dc"); <br>
+                 
+                            dc.addEventListener("click", function () { <br>
+                                document.write("Hello, world!"); <br>
+                            }); <br>
+                        });
+                    </span>
+
+                </span> <br><br>
+
+        </div>
+
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var dc = document.getElementById("dc");
+
+            dc.addEventListener("click", function () {
+                document.write("Hello, world!"); // Writes "Hello, world!" to the document when the button is clicked
+            });
+        });
+    </script>
+</body>
+
+</html>
