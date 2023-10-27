@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Q : 1 )Explain Life cycle in Class Component and functional component with Hooks </h1>
+    <p>
+        Class Component Lifecycle: <br> 1. Mounting Phase: <br>- `constructor()`: Initialize the component's state and other properties. <br> - `componentWillMount()`: Executed before the component is rendered. Deprecated in React 16.3. <br> - `render()`:
+        Create the initial UI structure. <br> - `componentDidMount()`: Called after the component is rendered to the DOM. Useful for AJAX requests and setting up event listeners. <br> 2. Updating Phase: <br> - `shouldComponentUpdate(nextProps, nextState)`:
+        Decide whether the component should re-render based on changes in props and state. <br> - `componentWillUpdate(nextProps, nextState)`: Executed before a re-render. Deprecated in React 16.3. <br> - `render()`: Re-render the component. <br> - `componentDidUpdate(prevProps,
+        prevState)`: Called after the component is updated in the DOM. <br> 3. Unmounting Phase: <br> - `componentWillUnmount()`: Performed just before the component is removed from the DOM. Useful for cleaning up resources and event listeners. <br> 4.
+        Error Handling Phase: <br> - `componentDidCatch(error, info)`: Introduced in React 16 for error handling within the component hierarchy. <br><br> Functional Component with Hooks Lifecycle: <br> 1. Mounting and Updating Phase: <br> - `useState`:
+        Manage the component's state within the functional component. <br> - `useEffect`: Handle side effects, both for mounting (similar to `componentDidMount`) and updating (similar to `componentDidUpdate`). <br> 2. Unmounting Phase: <br> - You can
+        return a cleanup function from `useEffect`, which will be called when the component is about to unmount, equivalent to `componentWillUnmount`. <br> 3.Error Handling Phase: <br> - Handle errors within the component using regular JavaScript error
+        handling mechanisms like `try...catch`. There is no direct equivalent to `componentDidCatch` in functional components. Functional components with hooks simplify the component lifecycle by allowing you to manage state and side effects in a more
+        straightforward and functional manner. The `useEffect` hook combines what was traditionally split between `componentDidMount` and `componentDidUpdate`, making it more predictable and easier to work with.</p>
+
+</body>
+
+</html>
