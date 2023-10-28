@@ -5,12 +5,15 @@ const Products = () => {
 
     return (
         <>
-            <div className="flex items-center gap-2">
+            <div className="grid md:flex items-center gap-2">
+
                 <h1 className="text-3xl px-5">Featured Categories</h1>
+                <div className="flex gap-5 pl-5">
                 <a href="" className="hover:text-green-500">Milk</a>
                 <a href="" className="hover:text-green-500">Coffee & Teas</a>
                 <a href="" className="hover:text-green-500">Pet Foods</a>
                 <a href="" className="hover:text-green-500">Vegetables</a>
+                </div>
             </div>
             <div className="flex justify-around overflow-hidden my-5 flex-wrap">
                 <div className="text-center">
