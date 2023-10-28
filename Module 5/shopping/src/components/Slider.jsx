@@ -4,7 +4,7 @@ const Slider = () => {
 
     const slides = [
         "../public/banner.jpg",
-        "https://static.vecteezy.com/system/resources/thumbnails/004/299/806/small/online-shopping-on-phone-buy-sell-business-digital-web-banner-application-money-advertising-payment-ecommerce-illustration-search-vector.jpg",
+        "../public/banner.jpg",
         "../public/banner.jpg"
     ];
     const [position, setPosition] = useState(0);
@@ -12,14 +12,6 @@ const Slider = () => {
         const newPosition = position + increment;
         setPosition(newPosition >= 0 && newPosition < slides.length ? newPosition : position);
     };
-    useEffect(() => {
-        const intervalId = setInterval(() => {
-            position <= 0 ? changePosition(1) : changePosition(-1);
-        }, 3000);
-
-        return () => clearInterval(intervalId);
-
-    }, [position]);
 
     return (
         <>
