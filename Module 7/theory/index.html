@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React - Applying Redux</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="px-3">
+    <div>
+        <h1 class="font-bold">Q : 1 ) What is Redux ? </h1>
+        <p><b>Ans :</b> <br> Redux is used in react for state management. We devide our react app in different
+            components so if
+            we
+            need
+            to transfer data between two componets it can be done through props but sometimes it can be very complex we
+            call
+            it props drilling. to avoid props drilling we use redux as a state management so we can use any data
+            anywhere
+            there is a store in redux where all data is stored
+        </p>
+    </div> <br>
+    <div>
+        <h1 class="font-bold">Q : 2 ) What is Redux Thunk used for? </h1>
+        <p><b>Ans :</b> <br>Redux Thunk is a middleware for Redux that lets you return functions instead of actions.
+            This
+            allows for
+            delayed actions, such as working with promises. Redux Thunk is used to manage the state of React
+            applications.
+        </p>
+    </div> <br>
+    <div>
+        <h1 class="font-bold">Q : 3 ) What is Pure Component? When to use Pure Component over
+            Component?</h1>
+        <p><b>Ans :</b> <br>
+            Pure components only re-render when their props or state change. They do not re-render when the value of
+            state and props has been updated with the same values.
+            <br>
+            You can use PureComponent when: <br>
+            A component's output solely depends on its state and props <br>
+            There are no side effects, such as network requests or interactions with the DOM <br>
+            Your React component's render() function renders the same result given the same props and state <br>
+        </p>
+    </div> <br>
+
+    <div>
+        <h1 class="font-bold">Q : 4 ) What is the second argument that can optionally be passed to setState and what is
+            its purpose ?
+        </h1>
+        <p><b>Ans :</b> <br>
+            The second argument that can optionally be passed to setState is a callback function which gets called
+            immediately after the setState is completed and the components get re-rendered.<br>
+        </p>
+    </div>
+</body>
+
+</html>
