@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { logout } from "./redux/authSlice";
 import AddPost from "./AddPost";
-import { removePost, updatePost } from "./redux/postsSlice";
+import { removePost } from "./redux/postsSlice";
 import { nanoid } from "@reduxjs/toolkit";
 
 const Home = () => {
@@ -21,30 +21,14 @@ const Home = () => {
     dispatch(logout(""));
     if (users === "") navigate("/");
   };
+
   const handleRemove = (id) => {
     dispatch(removePost(id));
   };
-  const [isEditing, setIsEditing] = useState(false);
-  const defaultData = { id: nanoid(), itemName: "", price: "", category: "" };
-  const [data, setData] = useState(defaultData);
 
-  const handleUpdate = (id) => {
-    setIsEditing(true);
-    const [selectedData] = posts.filter((data) => data.id === id);
-    setData(selectedData);
-  };
-
-  const handleEdit = () => {
-    setIsEditing(false);
-    dispatch(updatePost());
-  };
-
-  const handleInput = (e) => {
-    setData({ ...data, [e.target.name]: e.target.value });
-  };
   return (
     <div>
-      <header className="flex items-center justify-between py-3 px-5 bg-slate-200">
+      <header className="flex items-center justify-between py-3 px-5 mb-3 bg-slate-200">
         <p className="capitalize text-xl">Welcome {users} !</p>
         <button
           onClick={handleLogout}
@@ -53,53 +37,48 @@ const Home = () => {
           Logout
         </button>
       </header>
+      <Link
+        to="/addItem"
+        className="bg-cyan-400 px-7 py-1 rounded  font-semibold m-3"
+      >
+        Add Item
+      </Link>
 
-      <AddPost />
-
-      {posts.length > 0 && (
-        <div>
+      <table className="w-full text-center m-3 ">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
           {posts.map((e, i) => {
             return (
-              <div key={i} className="flex items-center gap-2 px-2">
-                <p>{e.itemName}</p>
-                <button onClick={() => handleRemove(e.id)}>❌</button>
-                <button onClick={() => handleUpdate(e.id)}>Edit</button>
-              </div>
+              <tr key={i}>
+                <td>{e.itemName}</td>
+                <td>{e.price}</td>
+                <td>{e.category}</td>
+                <td>
+                  <button
+                    className="bg-red-400 rounded px-3 mx-1 my-1"
+                    onClick={() => handleRemove(e.id)}
+                  >
+                    Delete
+                  </button>
+                  <Link
+                    to={`/edit/${e.id}`}
+                    className="bg-emerald-400 rounded px-3 mx-1 my-1"
+                  >
+                    Edit
+                  </Link>
+                </td>
+              </tr>
             );
           })}
-        </div>
-      )}
-      {isEditing && (
-        <>
-          <input
-            type="text"
-            name="itemName"
-            placeholder="Item Name *"
-            className="border border-black rounded px-3 py-1"
-            onChange={handleInput}
-            value={data.itemName}
-          />
-          <input
-            type="text"
-            name="price"
-            placeholder="Price *"
-            className="border border-black rounded px-3 py-1"
-            onChange={handleInput}
-            value={data.price}
-          />
-          <input
-            type="text"
-            name="category"
-            placeholder="Category *"
-            className="border border-black rounded px-3 py-1"
-            onChange={handleInput}
-            value={data.category}
-          />
-          <button onClick={handleEdit} className="bg-emerald-400">
-            Update
-          </button>
-        </>
-      )}
+        </tbody>
+      </table>
     </div>
   );
 };
