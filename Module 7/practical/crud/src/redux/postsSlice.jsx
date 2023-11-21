@@ -1,25 +1,35 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { items } from "../../Items";
 
+const setLocalData = (state) => {
+  localStorage.setItem('items', JSON.stringify(state.posts));
+};
+
+const localData = JSON.parse(localStorage.getItem('items')) || items;
+
 const postsReducer = createSlice({
   name: "posts",
   initialState: {
-    posts: items,
+    posts: localData,
   },
   reducers: {
     addPost: (state, action) => {
-      state.posts.push(action.payload);
+      state.posts = [...state.posts, action.payload];
+      setLocalData(state);
     },
     removePost: (state, action) => {
       state.posts = state.posts.filter((data) => data.id !== action.payload);
+      setLocalData(state);
     },
     updatePost: (state, action) => {
       const { id, itemName, price, category } = action.payload;
-      const selectedData = state.posts.find((data) => data.id === id);
-      selectedData.id = id;
-      selectedData.itemName = itemName;
-      selectedData.price = price;
-      selectedData.category = category;
+      state.posts = state.posts.map((data) => {
+        if (data.id === id) {
+          return { ...data, id, itemName, price, category };
+        }
+        return data;
+      });
+      setLocalData(state);
     },
   },
 });

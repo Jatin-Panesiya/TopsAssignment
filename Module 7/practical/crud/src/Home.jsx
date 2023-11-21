@@ -31,8 +31,8 @@ const Home = () => {
       </Link>
 
 
-    
-      <table className="w-full text-center m-3 ">
+    <div className="overflow-x-auto">
+      <table className="w-full text-center " border={1}>
         <thead>
           <tr>
             <th>Name</th>
@@ -66,7 +66,7 @@ const Home = () => {
             );
           })}
         </tbody>
-      </table>
+      </table></div>
     </div>
   );
 };
