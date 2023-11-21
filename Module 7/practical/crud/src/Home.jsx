@@ -13,15 +13,6 @@ const Home = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    if (users === "") navigate("/");
-  }, [navigate, users]);
-
-  const handleLogout = () => {
-    dispatch(logout(""));
-    if (users === "") navigate("/");
-  };
-
   const handleRemove = (id) => {
     dispatch(removePost(id));
   };
@@ -29,13 +20,8 @@ const Home = () => {
   return (
     <div>
       <header className="flex items-center justify-between py-3 px-5 mb-3 bg-slate-200">
-        <p className="capitalize text-xl">Welcome {users} !</p>
-        <button
-          onClick={handleLogout}
-          className="text-red-500 font-semibold text-lg"
-        >
-          Logout
-        </button>
+        <p className="capitalize text-xl">Welcome </p>
+        
       </header>
       <Link
         to="/addItem"
@@ -44,6 +30,8 @@ const Home = () => {
         Add Item
       </Link>
 
+
+    
       <table className="w-full text-center m-3 ">
         <thead>
           <tr>

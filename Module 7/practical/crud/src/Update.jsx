@@ -14,7 +14,7 @@ const Update = () => {
   const navigate = useNavigate();
   const HandleUpdate = () => {
     dispatch(updatePost(udata));
-    navigate("/home");
+    navigate("/");
   };
   const handleChange = (e) => {
     setuData({ ...udata, [e.target.name]: e.target.value });

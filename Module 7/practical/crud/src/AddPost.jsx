@@ -16,7 +16,7 @@ const AddPost = () => {
   const handleAdd = () => {
     dispatch(addPost(data));
     setData(defaultData);
-    navigate("/home");
+    navigate("/");
   };
 
   return (
